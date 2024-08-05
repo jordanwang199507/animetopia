@@ -2,10 +2,13 @@
 
 ### Simple CRUD application written with Next JS, Tailwind CSS, MongoDB and Google Authentication. This small application allow uers to create detailed records of your favorite anime and keep track of your current seasons and episodes. Easily organize your anime collection by watch status into lists such as In Progress, Future Watch, and Finished.
 
+[🚙 Live Version](https://animetopia-nine.vercel.app/)
+
 [![made-with-Next](https://img.shields.io/badge/Made%20with-Next.js%20-success)](https://nextjs.org/)
 [![made-with-React](https://img.shields.io/badge/Made%20with-MongoDB%20-blue)](https://www.mongodb.com/)
 [![made-with-Tailwind](https://img.shields.io/badge/Made%20with-Tailwind%20-yellow)](https://tailwindcss.com/)
 [![made-with-GoogleCloud](https://img.shields.io/badge/Made%20with-GoogleCloud%20-orange)](https://console.cloud.google.com/)
+[![deployed-on-Vercel](https://img.shields.io/badge/Deployed%20on-Vercel%20-orange)](https://vercel.com/)
 
 ## 📑 Table of Content
 - [🎢 Animetopia](#-animetopia)
