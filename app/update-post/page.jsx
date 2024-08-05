@@ -1,14 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-
 import Form from "@components/Form";
 
-const EditPost = () => {
+const EditPostContent = ({ postId }) => {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const postId = searchParams.get("id");
   const [submitting, setSubmitting] = useState(false);
   const [post, setPost] = useState({
     title: "",
@@ -35,7 +32,6 @@ const EditPost = () => {
         episode: data.episode,
         status: data.status,
       });
-      console.log(data);
     };
     if (postId) getPostDetails();
   }, [postId]);
@@ -90,4 +86,24 @@ const EditPost = () => {
     />
   );
 };
-export default EditPost;
+
+const EditPost = () => {
+  const searchParams = useSearchParams();
+  const postId = searchParams.get("id");
+
+  if (!postId) {
+    return <div>Loading...</div>;
+  }
+
+  return <EditPostContent postId={postId} />;
+};
+
+const WrappedEditPost = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <EditPost />
+    </Suspense>
+  );
+};
+
+export default WrappedEditPost;
