@@ -1,11 +1,14 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useEffect, useState, Suspense } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+
 import Form from "@components/Form";
 
-const EditPostContent = ({ postId }) => {
+const EditPost = () => {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const postId = searchParams.get("id");
   const [submitting, setSubmitting] = useState(false);
   const [post, setPost] = useState({
     title: "",
@@ -87,20 +90,4 @@ const EditPostContent = ({ postId }) => {
     />
   );
 };
-
-const EditPost = () => {
-  const searchParams = useSearchParams();
-  const postId = searchParams.get("id");
-
-  if (!postId) {
-    return <div>Loading...</div>;
-  }
-
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <EditPostContent postId={postId} />
-    </Suspense>
-  );
-};
-
 export default EditPost;
