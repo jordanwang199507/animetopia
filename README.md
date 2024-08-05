@@ -136,6 +136,3 @@ https://github.com/user-attachments/assets/e3e288bf-0389-47dd-bc2c-062af8cd9a88
 ## 🔨 Created By
 
 - Jordan Wang @jordanwang199507
-
-## 🧋Future Update
-- Deploy application
