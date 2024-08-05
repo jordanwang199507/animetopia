@@ -46,8 +46,14 @@ const Home = () => {
     );
   };
 
-  const handleTagClick = (tag) => {
-    setFilteredPosts(posts.filter((post) => post.tags.includes(tag)));
+  const handleTagClick = (genre) => {
+    setSearchText(genre);
+
+    const filtered = posts.filter((post) =>
+      post.genre.toLowerCase().includes(genre.toLowerCase())
+    );
+
+    setFilteredPosts(filtered);
   };
 
   const fetchPosts = async () => {
