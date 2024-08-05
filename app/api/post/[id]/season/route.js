@@ -6,7 +6,7 @@ export const PATCH = async (request, { params }) => {
 
   try {
     await connectToDB();
-    const exisitingPost = Post.findById(params.id);
+    const exisitingPost = await Post.findById(params.id);
     if (!exisitingPost) return Response("Post not found", { status: 404 });
 
     exisitingPost.season = season;
